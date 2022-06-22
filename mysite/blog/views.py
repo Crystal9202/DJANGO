@@ -11,6 +11,7 @@ def post_list(request , tag_slug=None):
         post_list = Post.objects.filter(tags__in=[tag])
     else:
         post_list = Post.objects.all()
+    tag_list=Tag.objects.all()
     paginator = Paginator(post_list,3)
     page = request.GET.get('page')
     try:
@@ -24,7 +25,7 @@ def post_list(request , tag_slug=None):
     return render(
         request,
         'post/list.html',
-        {'posts': posts}
+        {'posts': posts , 'tag_list':tag_list}
     )
 
 def post_detail(request, year, month, day, slug):
