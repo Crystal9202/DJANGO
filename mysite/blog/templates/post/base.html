@@ -1,0 +1,13 @@
+<html>
+<body>
+    <h1><a href="{% url "blog:post_list" %}">My Blog</a></h1>
+    <hr>
+    {% block content %}
+
+    {% endblock %}
+    <div>
+        <hr>
+        <p>&copy: 2020-<script type="text/javascript">document.write(new Date().getFullYear());</script>by Crystal. All rights reserved. <a href="mail:jpkoq18@gmail.com">Questions?</a></p>
+    </div>
+</body>
+</html>
